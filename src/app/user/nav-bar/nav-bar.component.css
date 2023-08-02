@@ -1,0 +1,23 @@
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    color:black;
+    font-weight: 700;
+  
+}
+
+.nav-item{
+color: black;
+}
+.nav-link
+{
+
+font-display: initial !important;
+    color:rgb(0, 0, 0);
+    font-weight: 700;
+
+}
+

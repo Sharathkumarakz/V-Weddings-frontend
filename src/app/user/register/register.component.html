@@ -1,0 +1,23 @@
+<div class="row m-0 register-bg" style="min-height: 100vh;">
+    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+    <h1 class="quote-text">Photography is the art of making memories tangible</h1>
+    </div>
+    <div class="col-sm-6 d-flex justify-content-center align-items-center" >
+    <div class="container register-form">
+        <form [formGroup]="registerForm" (ngSubmit)="register()" #reg="ngForm">
+            
+            <h3 class="register-head mt-3">SignUp</h3>
+            <input type="text" formControlName="username" placeholder="Username" id="">
+            <span class="err" *ngIf="registerForm.controls.username.invalid && registerForm.controls.password.touched || registerForm.controls.username.invalid && reg.submitted"><small>*username required</small></span>
+            <input type="text" formControlName="password"  placeholder="Password" id="">
+            <span class="err" *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.touched || registerForm.controls.password.invalid && reg.submitted"><small>*password required</small></span>
+            <input type="text" formControlName="email"  placeholder="Email" id="">
+            <span class="err" *ngIf="registerForm.controls.email.invalid && registerForm.controls.email.touched || registerForm.controls.email.invalid && reg.submitted"><small>*email required</small></span>
+            <input type="text" formControlName="phone" class="mb-2" placeholder="Phone no" id="">
+            <span class="err" *ngIf="registerForm.controls.phone.invalid && registerForm.controls.phone.touched || registerForm.controls.phone.invalid && reg.submitted"><small>*phone no. required</small></span>
+            <button class="submit-btn">Submit</button>
+            <p style="text-align: center;"><small>Already have an account?<a class="login" routerLink="/login">login</a>!</small> </p>
+        </form>
+    </div>
+    </div>
+</div>
