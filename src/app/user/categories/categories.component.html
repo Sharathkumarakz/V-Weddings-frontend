@@ -1,0 +1,46 @@
+<div class="part2">
+
+
+    <div style="margin-top: 4%; ">
+        <h1 style="color:  rgb(0, 0, 0); font-family: cursive; font-size:40px; text-align: center;" class="ml-4">
+            Categories</h1>
+        <div class="container m-auto " style="height: auto;">
+            <div class="ag-format-container" style="height: auto;">
+                <div class="ag-courses_box">
+                    <div class="ag-courses_item" *ngFor="let item of categories">
+                        <a routerLink="/category" class="ag-courses-item_link">
+                            <div class="ag-courses-item_bg"></div>
+                            <div class="ag-courses-item_title">
+                                {{item.name}}
+                            </div>
+                            <div class="ag-courses-item_date-box">
+                                :
+                                <span class="ag-courses-item_date">
+                                    {{item.description}}
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="ag-courses_item">
+                        <a routerLink="/category" class="ag-courses-item_link">
+                            <div class="ag-courses-item_bg"></div>
+
+                            <img style="height: 120px; object-fit: contain;"
+                                src="https://res.cloudinary.com/de8nd9vxi/image/upload/v1691064499/v%20wed/cute-photographer-kids-with-different-cameras-transparent-background-free-png-removebg-preview_vg0zvy.png"
+                                alt="">
+                            <div class="ag-courses-item_date-box">
+                                <span class="ag-courses-item_date">
+                                    Hey let's capture
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

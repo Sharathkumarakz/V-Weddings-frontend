@@ -7,17 +7,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 //http
 import {HttpClientModule} from '@angular/common/http'
 
+//guard
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
+    providers:[]
 })
 export class SharedModule { }

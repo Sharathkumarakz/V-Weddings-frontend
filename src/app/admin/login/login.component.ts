@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/service/auth.service';
-import { mailverified } from 'src/app/models/mailVeification';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { mailverified } from 'src/app/models/mailVeification';
+import { AdminService } from 'src/app/service/admin.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,11 +11,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private _auth: AuthService,private _router:Router) { }
+  constructor(private _adminService: AdminService,private _router:Router) { }
   
   //form configuration
   loginForm=new FormGroup({
-    email:new FormControl('',[Validators.required,Validators.email]),
+    email:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required])
   })
 
@@ -23,11 +24,11 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return
     } else {
-      this._auth.login(this.loginForm.value).subscribe((data) => {
+      this._adminService.login(this.loginForm.value).subscribe((data) => {
         console.log(data);
         let token=data as mailverified
-        localStorage.setItem('vweddings',token.jwttoken);
-        this._router.navigate(['/'])
+        localStorage.setItem('admin-V-Weddings',token.jwttoken);
+        this._router.navigate(['/admin/dashboard'])
       })
     }
 

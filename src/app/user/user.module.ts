@@ -12,9 +12,11 @@ import { RegisterComponent } from './register/register.component';
 //shared
 import { SharedModule } from '../shared/shared/shared.module';
 import { MailVerificationComponent } from './mail-verification/mail-verification.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { UserInterceptorInterceptor } from '../interceptor/user-interceptor.interceptor';
 import { LoginComponent } from './login/login.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryViewComponent } from './category-view/category-view.component';
+import { PromoComponent } from './promo/promo.component';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     RegisterComponent,
     MailVerificationComponent,
-    LoginComponent
+    LoginComponent,
+    CategoriesComponent,
+    CategoryViewComponent,
+    PromoComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     SharedModule,
-  ],
-  providers: [],
+  ]
 })
 export class UserModule { }

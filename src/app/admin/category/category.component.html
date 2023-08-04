@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+    <!-- Header with Navigation -->
+
+
+    <div class="row">
+   <div class="col-md-3 sidebar">
+
+        <app-sidebar></app-sidebar>
+</div>
+<div class="col-md-9">
+
+  <!-- Content Area -->
+  <form [formGroup]="categoryForm" (ngSubmit)="addCategory()" #reg="ngForm">
+            
+    <h3 class="register-head mt-3">Add category</h3>
+
+    <input type="text" formControlName="category"  placeholder="category name" id="">
+    <span class="err" *ngIf="categoryForm.controls.category.invalid && categoryForm.controls.category.touched || categoryForm.controls.category.invalid && reg.submitted"><small>*category name required</small></span>
+  
+    <input type="text" formControlName="description"  placeholder="category description" id="">
+    <span class="err" *ngIf="categoryForm.controls.description.invalid && categoryForm.controls.description.touched || categoryForm.controls.description.invalid && reg.submitted"><small>*description required</small></span>
+
+    <button class="submit-btn">Login</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Category Description</th>
+            <th>Action</th>
+            <th>Images</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of category ">
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td><button>delete</button></td>
+            <td><button>images</button></td>
+
+        </tr>
+    </tbody>
+</table>
+</div>
+    </div>
+  </div>

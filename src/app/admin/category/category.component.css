@@ -1,0 +1,70 @@
+body {
+    padding-top: 20px;
+  }
+  .sidebar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  .content {
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: #444;
+    padding: 10px;
+  }
+  .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+  }
+  .card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .card-header {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .card-text {
+    font-size: 16px;
+  }
+
+  
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+form.ng-invalid.ng-submitted input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+table{
+    margin-top: 6%;
+    width: 100%;
+}
+
+
+td{
+    border: 1px solid black;
+    padding: 8px;
+    background-color: #bdbdbd;
+}
+
+th{
+    border: 1px solid black;
+    padding: 8px;
+    background-color: #545454;
+}

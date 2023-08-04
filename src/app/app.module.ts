@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared/shared.module';
 import { UserInterceptorInterceptor } from './interceptor/user-interceptor.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
+//guard
 @NgModule({
   declarations: [
     AppComponent

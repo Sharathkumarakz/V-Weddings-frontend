@@ -11,13 +11,18 @@ import { Observable } from 'rxjs';
 export class UserInterceptorInterceptor implements HttpInterceptor {
 
   constructor() {}
-
+data!:string | null
   intercept(request: HttpRequest<string>, next: HttpHandler): Observable<HttpEvent<string>> {
-    let data=localStorage.getItem('vweddings')
-    if(data){
+if(request.url.includes('admin')){
+  this.data=localStorage.getItem('admin-V-Weddings')
+}else{
+  this.data=localStorage.getItem('vweddings')
+}
+ 
+    if(this.data){
      let tokennized=request.clone({
       setHeaders:{
-        Authorization:`${data}`
+        Authorization:`${this.data}`
       }
      })
      return next.handle(tokennized);
