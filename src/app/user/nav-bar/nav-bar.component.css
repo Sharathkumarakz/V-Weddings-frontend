@@ -6,18 +6,15 @@ body{
 .navbar-brand {
     color:black;
     font-weight: 700;
-  
 }
 
 .nav-item{
 color: black;
 }
-.nav-link
-{
 
+.nav-link{
 font-display: initial !important;
     color:rgb(0, 0, 0);
     font-weight: 700;
-
 }
 

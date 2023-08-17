@@ -3,6 +3,7 @@ export interface user{
 }
 
 export interface User{
+  _id:string,
     username:string,
     phone:string,
     email:string,

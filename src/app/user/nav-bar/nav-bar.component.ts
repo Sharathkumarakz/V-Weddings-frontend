@@ -22,7 +22,6 @@ export class NavBarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this._auth.getUser().subscribe({
       next: (data) => {
-        console.log(data,'gett');
         this.user = data as user;
         this.name = this.user.user.username;
       },
@@ -41,6 +40,6 @@ export class NavBarComponent implements OnInit, OnDestroy {
   logOut() {
     localStorage.removeItem('vweddings');
     this.name='Login'
-    // this._router.navigate(['/register']);
+     this._router.navigate(['/']);
   }
 }

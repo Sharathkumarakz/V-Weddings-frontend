@@ -2,13 +2,17 @@
 
     width: 100vw;
     height: auto;
-    background: 
+    /* background: 
         radial-gradient(circle at right,
             rgb(255, 255, 255),
             rgb(215, 208, 226),
             rgb(255, 255, 255),
             rgb(252, 223, 204)
-        );
+        ); */
+        background-image: url(https://res.cloudinary.com/de8nd9vxi/image/upload/v1691559655/v%20wed/multi-layers-gray-color-wavy-texture-3d-papercut-l_hpsjwe.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0 35% 0 0;
 }
 
 
@@ -152,6 +156,17 @@ div{
     .ag-courses-item_title {
       font-size: 24px;
     }
+    .part2 {
+
+      width: 100vw;
+      height: auto;
+
+          background-image: url(https://res.cloudinary.com/de8nd9vxi/image/upload/v1691559655/v%20wed/multi-layers-gray-color-wavy-texture-3d-papercut-l_hpsjwe.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-radius: 0;
+       
+  }
   }
   
   @media only screen and (max-width: 767px) {
@@ -177,6 +192,10 @@ div{
     .ag-courses-item_date-box {
       font-size: 16px;
     }
+
+   
+  
+  
   
       
   }

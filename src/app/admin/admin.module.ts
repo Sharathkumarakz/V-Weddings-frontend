@@ -9,6 +9,8 @@ import { NavComponent } from './nav/nav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CategoryComponent } from './category/category.component';
 import { ImageComponent } from './image/image.component';
+import { PromoComponent } from './promo/promo.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ImageComponent } from './image/image.component';
     NavComponent,
     SidebarComponent,
     CategoryComponent,
-    ImageComponent
+    ImageComponent,
+    PromoComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     font-family: sans-serif;
+    overflow-x: hidden;
 }
+html {
+    scroll-behavior: smooth;
+   }
+
+   @import '../node_modules/ngx-toastr/toastr.css';

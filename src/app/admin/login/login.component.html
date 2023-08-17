@@ -1,22 +1,25 @@
 <div class="row m-0 register-bg" style="min-height: 100vh;">
     <div class="col-sm-6 d-flex justify-content-center align-items-center">
-    <h1 class="quote-text">Photography is the art of making memories tangible</h1>
+        <h1 class="quote-text">Photography is the art of making memories tangible</h1>
     </div>
-    <div class="col-sm-6 d-flex justify-content-center align-items-center" >
-    <div class="container register-form">
-        <form [formGroup]="loginForm" (ngSubmit)="login()" #reg="ngForm">
-            
-            <h3 class="register-head mt-3">Admin Login</h3>
+    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+        <div class="container register-form">
+            <form [formGroup]="loginForm" (ngSubmit)="login()" #reg="ngForm">
 
-            <input type="text" formControlName="email"  placeholder="Email" id="">
-            <span class="err" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched || loginForm.controls.email.invalid && reg.submitted"><small>*email required</small></span>
-          
-            <input type="text" formControlName="password"  placeholder="Password" id="">
-            <span class="err" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched || loginForm.controls.password.invalid && reg.submitted"><small>*password required</small></span>
+                <h3 class="register-head mt-3">Admin Login</h3>
 
-            <button class="submit-btn">Login</button>
-            <p style="text-align: center;"><small>Don't have an account?<a class="signUp" routerLink="/register">Sign up</a>!</small> </p>
-        </form>
-    </div>
+                <input type="text" formControlName="email" placeholder="Email" id="">
+                <span class="err"
+                    *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched || loginForm.controls.email.invalid && reg.submitted"><small>*email
+                        required</small></span>
+
+                <input type="text" formControlName="password" placeholder="Password" id="">
+                <span class="err"
+                    *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched || loginForm.controls.password.invalid && reg.submitted"><small>*password
+                        required</small></span>
+
+                <button class="submit-btn">Login</button>
+            </form>
+        </div>
     </div>
 </div>

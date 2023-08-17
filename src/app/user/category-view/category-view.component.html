@@ -1,14 +1,21 @@
+
 <div class="part2">
     <app-nav-bar></app-nav-bar>
     <div class="container mt-4 ">
         <div class="row">
             <div class="col-sm-6 order-1 catogory-text">
-                <h3>Category</h3>
+                <h3>{{category[0].name}}</h3>
                 <div class="gallery-scroll-container">
                     <div class="gallery">
-                        <div class="image-container" *ngFor="let image of images; index as i"
+                        <div style="height: 100%; display: flex; align-items: center;  justify-content: center;" *ngIf="categoryData.length==0">
+                            <img class="no-image-size" style=" display: flex; align-items: center;  justify-content: center; min-height:100% ;  border-radius:10px;" src="https://cdn.dribbble.com/users/964877/screenshots/3499285/dribble_shot.gif" alt=""><br>
+                    
+                             </div>
+                             <div *ngIf="categoryData.length==0" style="display: flex; align-self: center;  justify-self: center;">
+                                <div>  <h3 style="font-family: cursive;"> Images_Not_Available</h3></div></div>
+                        <div class="image-container" *ngFor="let image of categoryData; index as i"
                             [ngClass]="getImageSizeClass(i)">
-                            <img (click)="selectImage(image)" src="{{ image }}" alt="Image {{ i + 1 }}">
+                            <img (click)="selectImage(image)" src="{{ image.image }}" alt="Image {{ i + 1 }}">
                         </div>
                     </div>
                 </div>
@@ -25,16 +32,14 @@
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>
-                        <div class="card-body">                           
-                            <i *ngIf="like" class="fa fa-heart" (click)="likePost()" style="font-size:28px;color:red"></i>
-                            <i *ngIf="!like" class="fa fa-heart" (click)="likePost()" style="font-size:28px;color:rgb(42, 42, 42)"></i>
-                          <span style="font-size:28px;"> 333 </span> likes
+                        <div class="card-body" *ngIf="selected && viewLike ">                           
+                            <i *ngIf="like" class="fa fa-heart" (click)="likePost(postId)" style="font-size:28px;color:red"></i>
+                            <i *ngIf="!like" class="fa fa-heart" (click)="likePost(postId)" style="font-size:28px;color:rgb(42, 42, 42)"></i>
+                          <span style="font-size:28px;"> {{likes}} </span> like <span class="ml-3" style="font-family: cursive;">"{{description}}"</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

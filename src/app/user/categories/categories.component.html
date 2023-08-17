@@ -2,28 +2,27 @@
 
 
     <div style="margin-top: 4%; ">
-        <h1 style="color:  rgb(0, 0, 0); font-family: cursive; font-size:40px; text-align: center;" class="ml-4">
+        <h1 style="color:  rgb(249, 249, 249); font-family: cursive; font-size:40px; text-align: center;" class="ml-4">
             Categories</h1>
         <div class="container m-auto " style="height: auto;">
             <div class="ag-format-container" style="height: auto;">
                 <div class="ag-courses_box">
                     <div class="ag-courses_item" *ngFor="let item of categories">
-                        <a routerLink="/category" class="ag-courses-item_link">
+                        <a (click)="navigateTo(item._id)" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>
                             <div class="ag-courses-item_title">
                                 {{item.name}}
                             </div>
                             <div class="ag-courses-item_date-box">
-                                :
+                                
                                 <span class="ag-courses-item_date">
                                     {{item.description}}
                                 </span>
                             </div>
                         </a>
                     </div>
-
                     <div class="ag-courses_item">
-                        <a routerLink="/category" class="ag-courses-item_link">
+                        <a href="https://www.instagram.com/vijesh_vweddings/" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>
 
                             <img style="height: 120px; object-fit: contain;"
@@ -31,7 +30,7 @@
                                 alt="">
                             <div class="ag-courses-item_date-box">
                                 <span class="ag-courses-item_date">
-                                    Hey let's capture
+                                    Instagram
                                 </span>
                             </div>
                         </a>

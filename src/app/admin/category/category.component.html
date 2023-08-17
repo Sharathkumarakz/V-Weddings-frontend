@@ -10,18 +10,26 @@
 </div>
 <div class="col-md-9">
 
+
+
+
+
+
+
+
+    
   <!-- Content Area -->
   <form [formGroup]="categoryForm" (ngSubmit)="addCategory()" #reg="ngForm">
             
     <h3 class="register-head mt-3">Add category</h3>
 
-    <input type="text" formControlName="category"  placeholder="category name" id="">
-    <span class="err" *ngIf="categoryForm.controls.category.invalid && categoryForm.controls.category.touched || categoryForm.controls.category.invalid && reg.submitted"><small>*category name required</small></span>
+    <input type="text" formControlName="category"  placeholder="category name" id=""><br>
+    <span style="color:red" class="err" *ngIf="categoryForm.controls.category.invalid && categoryForm.controls.category.touched || categoryForm.controls.category.invalid && reg.submitted"><small>*category name required</small></span><br>
   
-    <input type="text" formControlName="description"  placeholder="category description" id="">
-    <span class="err" *ngIf="categoryForm.controls.description.invalid && categoryForm.controls.description.touched || categoryForm.controls.description.invalid && reg.submitted"><small>*description required</small></span>
+    <input type="text" formControlName="description"  placeholder="category description" id=""><br>
+    <span style="color:red" class="err" *ngIf="categoryForm.controls.description.invalid && categoryForm.controls.description.touched || categoryForm.controls.description.invalid && reg.submitted"><small>*description required</small></span><br>
 
-    <button class="submit-btn">Login</button>
+    <button class="submit-btn ml-5">Add Category</button>
 </form>
 <table>
     <thead>
@@ -36,8 +44,8 @@
         <tr *ngFor="let item of category ">
             <td>{{item.name}}</td>
             <td>{{item.description}}</td>
-            <td><button>delete</button></td>
-            <td><button>images</button></td>
+            <td><button (click)="delete(item._id)">delete</button></td>
+            <td><button (click)="viewIMages(item._id)">images</button></td>
 
         </tr>
     </tbody>

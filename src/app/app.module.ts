@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared/shared.module';
 import { UserInterceptorInterceptor } from './interceptor/user-interceptor.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 //guard
@@ -16,7 +17,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ToastrModule.forRoot()
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:UserInterceptorInterceptor,multi:true}],
   bootstrap: [AppComponent]

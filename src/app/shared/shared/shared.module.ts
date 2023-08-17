@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
 //guard
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -19,7 +20,9 @@ import {HttpClientModule} from '@angular/common/http'
   exports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+   
   ],
     providers:[]
 })

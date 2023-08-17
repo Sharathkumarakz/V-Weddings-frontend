@@ -1,0 +1,74 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+    <!-- Header with Navigation -->
+
+
+    <div class="row">
+   <div class="col-md-3 sidebar">
+
+        <app-sidebar></app-sidebar>
+</div>
+<div class="col-md-9 mt-5">
+  <h1>Category wise image</h1>
+  <table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Img Description</th>
+            <th>Action</th>
+            <th>View</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of categoryData ">
+            <td><img src="{{item.image}}" width="30px" alt=""></td>
+            <td>{{item.description}}</td>
+            <td><button (click)="delete(item._id)">delete</button></td>
+            <td><button (click)="selectImage(item) " data-toggle="modal" data-target="#exampleModalLong">View Image</button></td>
+
+        </tr>
+    </tbody>
+</table>
+</div>
+    </div>
+  </div>
+
+
+  
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Liked images</h5>
+          <button type="button" (click)="getdata()" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="my-card-wrapper">
+            <div *ngIf="selected" class="card">
+                <!-- Card image -->
+                <div class="view overlay">
+                    <img class="card-img-top img-fluid" src="{{selected}}" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body" *ngIf="selected ">                           
+                  <span style="font-size:28px;">{{likedCount}} Likes </span> <span class="ml-3" style="font-family: cursive;">"{{description}}"</span><br>
+                  <span style="font-size:18px;" *ngIf="likedCount >= 1"><button (click)="showLikes = !showLikes">View Likes</button> </span> <span class="ml-3" style="font-family: cursive;"></span>
+  <span *ngIf="showLikes">
+                  <span *ngFor="let liked of likes">{{liked.email}} <br></span>
+                  </span>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="getdata()" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

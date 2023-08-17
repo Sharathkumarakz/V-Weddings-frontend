@@ -1,0 +1,58 @@
+<div class="part2">
+
+<app-nav-bar></app-nav-bar>
+     <!---Likes STARTS-->
+     <section class="container mt-5">
+        <h3 style="text-align: start; color: rgb(253, 253, 253); font-family: cursive;">Likes</h3>
+        <div class="row m-0 ">
+          <div *ngIf="likes.length==0" style="align-items: center;">
+           <img width="100px" src="https://res.cloudinary.com/de8nd9vxi/image/upload/v1691653085/v%20wed/instagram-hiding-likes-button-remove-removebg-preview_oerflc.png" alt=""><span style="font-family: cursive; color: aliceblue;">There is no your liked Images</span>
+        </div>
+     
+          <div class="col-4   mt-3 " *ngFor="let item of likes">
+            <img (click)="selectImage(item)"  src="{{item.image}}" class="image-view" style="object-fit: cover; border-radius: 5px; " data-toggle="modal" data-target="#exampleModalLong">
+          </div>
+
+        </div>
+      </section>
+      <!---POST ENDS-->
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Liked images</h5>
+        <button type="button" (click)="getdata()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="my-card-wrapper">
+          <div *ngIf="selected" class="card">
+              <!-- Card image -->
+              <div class="view overlay">
+                  <img class="card-img-top img-fluid" src="{{selected}}" alt="Card image cap">
+                  <a href="#!">
+                      <div class="mask rgba-white-slight"></div>
+                  </a>
+              </div>
+              <div class="card-body" *ngIf="selected && viewLike ">                           
+                  <i *ngIf="like" class="fa fa-heart" (click)="likePost(postId)" style="font-size:28px;color:red"></i>
+                  <i *ngIf="!like" class="fa fa-heart" (click)="likePost(postId)" style="font-size:28px;color:rgb(42, 42, 42)"></i>
+                <span style="font-size:28px;"></span> like <span class="ml-3" style="font-family: cursive;">"{{description}}"</span>
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="getdata()" data-dismiss="modal">Close</button>
+    
+      </div> -->
+    </div>
+  </div>
+</div>

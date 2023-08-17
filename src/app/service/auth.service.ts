@@ -10,6 +10,13 @@ export class AuthService {
   constructor(private _http:HttpClient) { }
   baseUrl:string =environment.apiUrl
 
+
+  
+  //admin active
+  adminActive(){
+    return this._http.get(`${this.baseUrl}/admin/adminActive`,{withCredentials:true})
+   }
+
   //user registration
   register(data:object){
    return this._http.post(`${this.baseUrl}/register`,data,{withCredentials:true})

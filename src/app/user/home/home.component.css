@@ -59,9 +59,29 @@ font-display: initial !important;
   background-color: azure;
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 5px;
-  border: 1px solid brown;
+  border: 1px solid rgb(0, 0, 0);
   box-shadow:  black;
 }
+
+::-webkit-scrollbar {
+    width: 3px;
+    scroll-behavior: smooth;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #000000; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5b5b5b; 
+  }
 /* Media query for screens with a minimum width of 800px and a maximum width of 1199px */
 @media screen and (min-width: 200px) and (max-width: 800px) {
     .heightt {

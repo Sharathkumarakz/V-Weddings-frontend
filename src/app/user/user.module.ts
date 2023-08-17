@@ -16,6 +16,9 @@ import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryViewComponent } from './category-view/category-view.component';
 import { PromoComponent } from './promo/promo.component';
+import { VideosComponent } from './videos/videos.component';
+import { ErrorComponent } from './error/error.component';
+import { LikesComponent } from './likes/likes.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { PromoComponent } from './promo/promo.component';
     LoginComponent,
     CategoriesComponent,
     CategoryViewComponent,
-    PromoComponent
+    PromoComponent,
+    VideosComponent,
+    ErrorComponent,
+    LikesComponent
   ],
   imports: [
     CommonModule,

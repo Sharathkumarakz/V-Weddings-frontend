@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { category } from 'src/app/models/category';
 import { UserService } from 'src/app/service/user.service';
 
@@ -8,10 +9,10 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  constructor(private user:UserService){}
+  constructor(private _user:UserService,private _router:Router){}
   categories:category[]=[]
 ngOnInit(): void {
-     this.user.category().subscribe({
+     this._user.category().subscribe({
       next:(data)=>{
         this.categories=data as category[]
       },error:(err)=>{
@@ -19,4 +20,10 @@ ngOnInit(): void {
       }
      })
 }
+
+navigateTo(id:string){
+this._router.navigate(['/category/'+id]);
+}
+
+
 }

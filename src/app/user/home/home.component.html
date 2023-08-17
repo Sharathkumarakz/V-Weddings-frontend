@@ -1,18 +1,22 @@
 <div class="part2">
-  <app-nav-bar></app-nav-bar>
+
+  <app-nav-bar style="position: sticky;"></app-nav-bar>
+
   <div class="container-fluid m-0">
     <div class="row m-0 heightt">
       <div class="col-sm-6 ; justify-content-center  " style="margin-top: 12%; ">
         <h1 style="font-family: fantasy; font-size: 50px" class="ml-4">Photography is a story I can't put into words
         </h1>
         <h1 style="color:  rgb(125, 82, 194); font-family: fantasy; font-size:48px;" class="ml-4">V-Weddings </h1>
-        <p style="color:  rgb(97, 93, 103); " class="ml-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Voluptatem, facere veniam. Nesciunt sed magni voluptas officiis voluptatibus. Aperiam officiis deleniti ab
-          reprehenderit ipsa temporibus illo optio, voluptas quia unde autem? </p>
+        <p style="color:  rgb(97, 93, 103); " class="ml-4">“To photograph is to hold one’s breath, when all faculties converge to capture fleeting reality. It’s at that precise moment that mastering an image becomes a great physical and intellectual joy.” </p>
 
-        <button class="button-goTo ml-5">SEE MORE </button>
+        <button class="button-goTo ml-5" (click)="showDetails = !showDetails">ABOUT ME </button>
+        <p *ngIf="showDetails" style="color:  rgb(97, 93, 103); " class="ml-4  mt-5">Hi, its me <span style="color: black;">Vijesh</span> <br>I am more than just a photographer and video editor; I am a storyteller with a lens. With a deep appreciation for aesthetics, I have honed my craft over years of dedicated work. My journey began as a humble enthusiast, and through hard work and unwavering dedication, I have evolved into a professional who captures emotions, stories, and details that often go unnoticed.<br><br>
+<span style="color: black;">Phone:9995262066<br>
+E-Mail:  <a href="mailto:vijeshd23@gmail.com " class="mail">vijeshd23@gmail.com </a></span>
+</p>
       </div>
-      <div class="col-sm-6 d-flex justify-content-center align-items-center ">
+      <div class="col-sm-6 d-flex justify-content-center align-items-center " style="margin-bottom: 6%;">
         <img style="width: 80%; border-radius: 20px; mix-blend-mode: darken;  margin-top:7%;"
           src="https://res.cloudinary.com/de8nd9vxi/image/upload/v1690777183/v%20wed/WhatsApp_Image_2023-07-31_at_09.43.29_zskrqu.jpg"
           alt="">
@@ -21,5 +25,7 @@
   </div>
   
 <app-categories></app-categories>
+<app-videos></app-videos>
 
+<app-promo></app-promo>
 </div>

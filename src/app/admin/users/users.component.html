@@ -1,0 +1,43 @@
+
+
+
+  
+  <app-nav></app-nav>
+  <div class="container-fluid">
+      <!-- Header with Navigation -->
+  
+  
+      <div class="row">
+     <div class="col-md-3 sidebar">
+  
+          <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-md-9 mt-5">
+    <h1>Users</h1>
+    <table>
+      <thead>
+          <tr>
+              <th>Image</th>
+              <th>Img Description</th>
+              <th>Action</th>
+              <th>View</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of usersData ">
+              <td>{{item.username}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.phone}}</td>
+              <td *ngIf="item.isBlocked == true"><button (click)="block(item._id)">unblock</button></td>
+              <td *ngIf="item.isBlocked == false"><button  (click)="unBlock(item._id)">block</button></td>
+
+  
+          </tr>
+      </tbody>
+  </table>
+  </div>
+      </div>
+    </div>
+  
+  
+    

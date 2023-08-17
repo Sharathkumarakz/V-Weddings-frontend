@@ -8,7 +8,7 @@
             
             <h3 class="register-head mt-3">SignUp</h3>
             <input type="text" formControlName="username" placeholder="Username" id="">
-            <span class="err" *ngIf="registerForm.controls.username.invalid && registerForm.controls.password.touched || registerForm.controls.username.invalid && reg.submitted"><small>*username required</small></span>
+            <span class="err" *ngIf="registerForm.controls.username.invalid && registerForm.controls.username.touched || registerForm.controls.username.invalid && reg.submitted"><small>*username required</small></span>
             <input type="text" formControlName="password"  placeholder="Password" id="">
             <span class="err" *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.touched || registerForm.controls.password.invalid && reg.submitted"><small>*password required</small></span>
             <input type="text" formControlName="email"  placeholder="Email" id="">
