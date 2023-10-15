@@ -20,7 +20,6 @@ import { VideosComponent } from './videos/videos.component';
 import { ErrorComponent } from './error/error.component';
 import { LikesComponent } from './likes/likes.component';
 
-
 @NgModule({
   declarations: [
     NavBarComponent,
@@ -38,7 +37,7 @@ import { LikesComponent } from './likes/likes.component';
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule,
+    SharedModule
   ]
 })
 export class UserModule { }

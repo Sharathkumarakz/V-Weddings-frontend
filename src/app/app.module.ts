@@ -8,6 +8,12 @@ import { UserInterceptorInterceptor } from './interceptor/user-interceptor.inter
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
+//ngrx
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { appEffects } from 'src/app/ngrx/app.effects';
+import { likeReducer } from 'src/app/ngrx/app.reducer';
+
 
 //guard
 @NgModule({
@@ -18,6 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    StoreModule.forRoot({likedetails:likeReducer}), // Adjust the state key 'likes' accordingly
+    EffectsModule.forRoot([appEffects]),
     ToastrModule.forRoot()
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:UserInterceptorInterceptor,multi:true}],

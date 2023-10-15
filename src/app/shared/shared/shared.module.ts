@@ -15,14 +15,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
-   
+    FormsModule
   ],
     providers:[]
 })
