@@ -46,7 +46,7 @@ export class LikesComponent implements OnInit{
       this.postId=image._id
       this.description=image.description
       this.viewLike=true
-     this.like=true
+      this.like=true
      }
    
 

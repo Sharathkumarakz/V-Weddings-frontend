@@ -51,8 +51,6 @@ export class DashboardComponent implements OnInit{
       return
     } else {
       this._adminService.addCategory(this.categoryForm.value).subscribe((data) => {
-        console.log(data);
-        
         this.category=data as category[]
       })
     }
@@ -114,11 +112,8 @@ export class DashboardComponent implements OnInit{
        formData.append('textFieldName', JSON.stringify(this.formn));
        this._adminService.imgUpload(formData).subscribe({
          next:(response) => {
-           console.log('Upload success!', response);
-           
          },
          error:(error) => {
-           console.error('Upload failed:', error);
          }
      });
      } else {

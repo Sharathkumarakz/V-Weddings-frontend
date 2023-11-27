@@ -4,8 +4,7 @@ import { liked } from '../models/liked';
 
 export const likeReducer = createReducer<liked | undefined>(
     undefined,
-    on(retrieveLikes,(state,{likeDetails})=>{
-        console.log(likeDetails);     
+    on(retrieveLikes,(state,{likeDetails})=>{     
         return likeDetails;
     })
 )

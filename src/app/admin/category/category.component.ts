@@ -34,8 +34,6 @@ export class CategoryComponent implements OnInit{
 
   //form submission
   addCategory() {
-    console.log('call');
-    
     if (this.categoryForm.invalid) {
       return
     } else {
